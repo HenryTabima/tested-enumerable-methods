@@ -1,6 +1,11 @@
 # Extensión for enumerable module
 module Enumerable
   def my_each
-    # implementation
+    i = 0
+    while i < length
+      yield(at(i))
+      i += 1
+    end
+    self
   end
 end
