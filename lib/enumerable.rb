@@ -46,6 +46,11 @@ module Enumerable
   end
 
   def my_any?
-    # TODO
+    result = false
+    for i in self
+      result ||= yield(i)
+      break if result
+    end
+    result
   end
 end
