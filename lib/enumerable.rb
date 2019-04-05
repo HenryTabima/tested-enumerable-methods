@@ -17,4 +17,9 @@ module Enumerable
     end
     self
   end
+
+  def my_inject(carry = at(0))
+    # implementation
+  end
+  alias my_reduce my_inject
 end
