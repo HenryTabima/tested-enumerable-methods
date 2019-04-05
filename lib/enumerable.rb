@@ -29,6 +29,10 @@ module Enumerable
   alias my_reduce my_inject
 
   def my_select
-    # implementation
+    selected = []
+    for i in self
+      selected << i if yield(i)
+    end
+    selected
   end
 end
