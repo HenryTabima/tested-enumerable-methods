@@ -19,7 +19,12 @@ module Enumerable
   end
 
   def my_inject(carry = at(0))
-    # implementation
+    i = carry == at(0) ? 1 : 0
+    while i < length
+      carry = yield(carry, at(i))
+      i += 1
+    end
+    carry
   end
   alias my_reduce my_inject
 end
