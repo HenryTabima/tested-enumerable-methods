@@ -37,6 +37,11 @@ module Enumerable
   end
 
   def my_all?
-    # Todo
+    result = true
+    for i in self
+      result &&= yield(i)
+      break unless result
+    end
+    result
   end
 end
