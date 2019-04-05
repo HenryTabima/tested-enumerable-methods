@@ -35,4 +35,8 @@ module Enumerable
     end
     selected
   end
+
+  def my_all?
+    # Todo
+  end
 end

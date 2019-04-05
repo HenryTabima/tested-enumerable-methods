@@ -51,4 +51,20 @@ describe Enumerable do # rubocop:disable Metrics/BlockLength
       expect(my_select_res).to eq(select_res)
     end
   end
+
+  describe '#my_all?' do
+    context '#works like #all?' do
+      it 'when true' do
+        all_res = numbers.all? { |n| n < 6 }
+        my_all_res = numbers.my_all? { |n| n < 6 }
+        expect(my_all_res).to eq(all_res)
+      end
+
+      it 'when false' do
+        all_res = numbers.all? { |n| n < 4 }
+        my_all_res = numbers.my_all? { |n| n < 4 }
+        expect(my_all_res).to eq(all_res)
+      end
+    end
+  end
 end
