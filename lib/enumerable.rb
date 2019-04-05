@@ -10,6 +10,11 @@ module Enumerable
   end
 
   def my_each_with_index
-    # implementation
+    i = 0
+    while i < length
+      yield(at(i), i)
+      i += 1
+    end
+    self
   end
 end
