@@ -44,4 +44,8 @@ module Enumerable
     end
     result
   end
+
+  def my_any?
+    # TODO
+  end
 end

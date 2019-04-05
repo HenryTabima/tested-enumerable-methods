@@ -53,7 +53,7 @@ describe Enumerable do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#my_all?' do
-    context '#works like #all?' do
+    context 'works like #all?' do
       it 'when true' do
         all_res = numbers.all? { |n| n < 6 }
         my_all_res = numbers.my_all? { |n| n < 6 }
@@ -64,6 +64,22 @@ describe Enumerable do # rubocop:disable Metrics/BlockLength
         all_res = numbers.all? { |n| n < 4 }
         my_all_res = numbers.my_all? { |n| n < 4 }
         expect(my_all_res).to eq(all_res)
+      end
+    end
+  end
+
+  describe '#my_any?' do
+    context 'works like #any?' do
+      it 'when true' do
+        any_res = numbers.any? { |n| n == 4 }
+        my_any_res = numbers.my_any? { |n| n == 4 }
+        expect(my_any_res).to eq(any_res)
+      end
+
+      it 'when false' do
+        any_res = numbers.any? { |n| n == 6 }
+        my_any_res = numbers.my_any? { |n| n == 6 }
+        expect(my_any_res).to eq(any_res)
       end
     end
   end
