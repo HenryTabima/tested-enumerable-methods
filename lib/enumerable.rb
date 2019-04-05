@@ -27,4 +27,8 @@ module Enumerable
     carry
   end
   alias my_reduce my_inject
+
+  def my_select
+    # implementation
+  end
 end

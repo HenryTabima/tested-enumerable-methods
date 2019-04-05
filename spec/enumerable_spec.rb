@@ -43,4 +43,12 @@ describe Enumerable do # rubocop:disable Metrics/BlockLength
       end
     end
   end
+
+  describe '#my_select' do
+    it 'works like #select' do
+      select_res = numbers.select { |n| n < 4 }
+      my_select_res = numbers.my_select { |n| n < 4 }
+      expect(my_select_res).to eq(select_res)
+    end
+  end
 end
